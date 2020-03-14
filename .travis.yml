@@ -1,0 +1,30 @@
+language: node_js
+
+node_js:
+  - "stable"
+
+cache:
+  directories:
+    - "node_modules"
+
+install:
+  - npm install
+
+services:
+  - mysql
+
+env:
+  global:
+    - NODE_ENV=test
+
+before_script:
+  - mysql -e 'CREATE DATABASE IF NOT EXISTS opioid;'
+  - npm run build
+  - npm install -g sequelize-cli
+  - sequelize db:migrate
+
+script:
+  - npm test
+
+after_success:
+  - npm run coverage
