@@ -15,7 +15,7 @@ var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/cl
 
 var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
 
-var _models = _interopRequireDefault(require("../src/models"));
+var _models = _interopRequireDefault(require("../database/models"));
 
 var BookService = /*#__PURE__*/function () {
   function BookService() {

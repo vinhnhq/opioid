@@ -3,6 +3,7 @@ import express from "express";
 import bodyParser from "body-parser";
 
 import bookRoutes from "./server/routes/BookRoutes";
+import drugRoutes from "./server/routes/DrugRoutes";
 
 config.config();
 
@@ -14,6 +15,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 const port = process.env.PORT || 8000;
 
 app.use("/api/v1/books", bookRoutes);
+
+app.use("/api/v1/drugs", drugRoutes);
 
 app.get("*", (req, res) =>
   res.status(200).send({

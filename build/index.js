@@ -15,6 +15,8 @@ var _bodyParser = _interopRequireDefault(require("body-parser"));
 
 var _BookRoutes = _interopRequireDefault(require("./server/routes/BookRoutes"));
 
+var _DrugRoutes = _interopRequireDefault(require("./server/routes/DrugRoutes"));
+
 _dotenv["default"].config();
 
 var app = (0, _express["default"])();
@@ -24,6 +26,7 @@ app.use(_bodyParser["default"].urlencoded({
 }));
 var port = process.env.PORT || 8000;
 app.use("/api/v1/books", _BookRoutes["default"]);
+app.use("/api/v1/drugs", _DrugRoutes["default"]);
 app.get("*", function (req, res) {
   return res.status(200).send({
     message: "Welcome to this API."

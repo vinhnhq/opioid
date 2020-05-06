@@ -1,4 +1,4 @@
-import database from "../src/models";
+import database from "../database/models";
 
 class BookService {
   static async getAllBooks() {
